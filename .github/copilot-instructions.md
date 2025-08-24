@@ -12,6 +12,8 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/framework (LARAVEL) - v12
 - laravel/prompts (PROMPTS) - v0
 - laravel/pint (PINT) - v1
+- alpinejs (ALPINEJS) - v3
+- tailwindcss (TAILWINDCSS) - v3
 
 
 ## Conventions
@@ -179,4 +181,44 @@ protected function isAccessible(User $user, ?string $path = null): bool
 
 - You must run `vendor/bin/pint --dirty` before finalizing changes to ensure your code matches the project's expected style.
 - Do not run `vendor/bin/pint --test`, simply run `vendor/bin/pint` to fix any formatting issues.
+
+
+=== tailwindcss/core rules ===
+
+## Tailwind Core
+
+- Use Tailwind CSS classes to style HTML, check and use existing tailwind conventions within the project before writing your own.
+- Offer to extract repeated patterns into components that match the project's conventions (i.e. Blade, JSX, Vue, etc..)
+- Think through class placement, order, priority, and defaults - remove redundant classes, add classes to parent or child carefully to limit repetition, group elements logically
+- You can use the `search-docs` tool to get exact examples from the official documentation when needed.
+
+### Spacing
+- When listing items, use gap utilities for spacing, don't use margins.
+
+    <code-snippet name="Valid Flex Gap Spacing Example" lang="html">
+        <div class="flex gap-8">
+            <div>Superior</div>
+            <div>Michigan</div>
+            <div>Erie</div>
+        </div>
+    </code-snippet>
+
+
+### Dark Mode
+- If existing pages and components support dark mode, new pages and components must support dark mode in a similar way, typically using `dark:`.
+
+
+=== tailwindcss/v3 rules ===
+
+## Tailwind 3
+
+- Always use Tailwind CSS v3 - verify you're using only classes supported by this version.
+
+
+=== tests rules ===
+
+## Test Enforcement
+
+- Every change must be programmatically tested. Write a new test or update an existing test, then run the affected tests to make sure they pass.
+- Run the minimum number of tests needed to ensure code quality and speed. Use `php artisan test` with a specific filename or filter.
 </laravel-boost-guidelines>
