@@ -32,6 +32,8 @@
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('frontend/assets/img/favicon.png') }}">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 
         <title>Dazzlesoft - Hotel & Resorts Booking</title>
     </head>
