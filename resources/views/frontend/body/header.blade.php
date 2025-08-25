@@ -28,6 +28,13 @@
                               <i class='bx bx-envelope'></i>
                               <a href="mailto:hello@atoli.com">hello@atoli.com</a>
                           </li>
+                          @if(Auth::check())
+                          <li>
+                              <i class='bx bxs-user-pin'></i>
+                              <a href="{{ route('user.profile') }}">My Profile</a>
+                          </li>
+                          @endif
+                          @if(!Auth::check())
                           <li>
                               <i class='bx bxs-user-pin'></i>
                               <a href="{{ route('login') }}">Login</a>
@@ -36,6 +43,9 @@
                               <i class='bx bxs-user-rectangle'></i>
                               <a href="{{ route('register') }}">Register</a>
                           </li>
+                          @endif
+
+
                       </ul>
                   </div>
               </div>

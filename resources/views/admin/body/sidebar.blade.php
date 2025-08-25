@@ -207,6 +207,13 @@
 						<div class="menu-title">Authentication</div>
 					</a>
 					<ul>
+                        <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Team Management</a>
+							<ul>
+								<li><a href="auth-cover-signin.html" target="_blank"><i class='bx bx-radio-circle'></i>Add Team Member</a></li>
+								<li><a href="{{ route('admin.teams.index') }}" target="_blank"><i class='bx bx-radio-circle'></i>List Team Members</a></li>
+
+							</ul>
+						</li>
 						<li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Basic</a>
 							<ul>
 								<li><a href="auth-basic-signin.html" target="_blank"><i class='bx bx-radio-circle'></i>Sign In</a></li>

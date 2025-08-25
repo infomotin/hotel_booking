@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,6 +28,16 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+//Get Authenticated User
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $userName = $user->name;
+
+        $notification = array(
+            'message' => 'Welcome Back ' . $userName,
+            'alert-type' => 'success'
+        );
+
         $url = '';
         if($request->user()->role == 'admin'){
             $url ='/admin/dashboard';
@@ -34,7 +45,7 @@ class AuthenticatedSessionController extends Controller
             $url ='/dashboard';
         }
 
-        return redirect()->intended($url);
+        return redirect()->intended($url)->with($notification);
     }
 
     /**
