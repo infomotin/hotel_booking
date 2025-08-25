@@ -13,6 +13,10 @@ class AdminController extends Controller
     public function adminDashboard(){
         return view('admin.index');
     }
+    //adminLogin
+    public function adminLogin(){
+        return view('admin.admin_login');
+    }
     //adminLogout
     public function adminLogout(Request $request):RedirectResponse{
         Auth::guard('web')->logout();

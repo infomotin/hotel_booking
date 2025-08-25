@@ -8,3 +8,5 @@ Route::middleware(['auth', 'verified', 'roles:admin'])->group(function () {
     //admin.logout
     Route::get('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
 });
+//admin Login Route
+Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
