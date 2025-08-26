@@ -204,13 +204,27 @@
 					<a class="has-arrow" href="javascript:;">
 						<div class="parent-icon"><i class="bx bx-lock"></i>
 						</div>
-						<div class="menu-title">Authentication</div>
+						<div class="menu-title">Application Basic Setup</div>
 					</a>
 					<ul>
                         <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Team Management</a>
 							<ul>
-								<li><a href="auth-cover-signin.html" target="_blank"><i class='bx bx-radio-circle'></i>Add Team Member</a></li>
+								<li><a href="{{ route('admin.teams.create') }}" target="_blank"><i class='bx bx-radio-circle'></i>Add Team Member</a></li>
 								<li><a href="{{ route('admin.teams.index') }}" target="_blank"><i class='bx bx-radio-circle'></i>List Team Members</a></li>
+
+							</ul>
+						</li>
+                        <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Manage Booking Area</a>
+							<ul>
+								<li><a href="{{ route('admin.book_areas.create') }}" target="_blank"><i class='bx bx-radio-circle'></i>Add Booking Area</a></li>
+								<li><a href="{{ route('admin.book_areas.index') }}" target="_blank"><i class='bx bx-radio-circle'></i>List Booking Areas</a></li>
+
+							</ul>
+						</li>
+                        <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Manage Room Types</a>
+							<ul>
+								<li><a href="{{ route('admin.room_types.create') }}" target="_blank"><i class='bx bx-radio-circle'></i>Add Room Type</a></li>
+								<li><a href="{{ route('admin.room_types.index') }}" target="_blank"><i class='bx bx-radio-circle'></i>List Room Types</a></li>
 
 							</ul>
 						</li>
